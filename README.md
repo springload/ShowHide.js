@@ -2,7 +2,7 @@
 
 Put simply, show a `data-showhide-container` when a `data-showhide-trigger` is clicked.
 
-```
+```html
 <span data-showhide-trigger='wheres-wally'>Find wally</span>
 
 <div class='showhide--hidden' data-showhide-container='wheres-wally'>
@@ -21,7 +21,7 @@ of options passed as data-attributes to your DOM elements.
 
 To apply a custom class to the `container` when the `trigger` is clicked:
 
-```
+```html
 <div class='showhide-hidden' data-showhide-container='wheres-wally' data-showhide-activeclass='wally-is-alive'>
     <h1>Oh hey, it's Wally!</h1>
 </div>
@@ -29,7 +29,7 @@ To apply a custom class to the `container` when the `trigger` is clicked:
 
 To apply a custom class to the `trigger`:
 
-```
+```html
 <span data-showhide-trigger='wheres-wally'>Find wally</span>
 <div class='showhide-hidden' data-showhide-container='wheres-wally' data-showhide-triggerclass='trigger-active'>
     <h1>Oh hey, it's Wally!</h1>
@@ -40,7 +40,7 @@ To apply a custom class to the `trigger`:
 The component will be sized to a specific height when shown. This is handy for animating the
 height via CSS transitions:
 
-```
+```html
 <div class='showhide-hidden' data-showhide-container='wheres-wally' data-showhide-autoheight>
     <h1>Oh hey, it's Wally!</h1>
 </div>
@@ -50,7 +50,7 @@ height via CSS transitions:
 The component will hide/toggle if the user clicks anywhere outside the component.
 
 
-```
+```html
 <div class='showhide-hidden' data-showhide-container='wheres-wally' data-showhide-dismissable>
     <h1>Oh hey, it's Wally!</h1>
 </div>
@@ -60,7 +60,7 @@ The component will hide/toggle if the user clicks anywhere outside the component
 Especially handy for all your complex forms. Assign a `data-showhide-group` and all the other items in the group will be closed
 when one group member is opened.
 
-```
+```html
 <span data-showhide-trigger='wheres-wally'>Find wally</span>
 <div class='showhide-hidden' data-showhide-container='wheres-wally'  data-showhide-group='heroes'>
     <h1>Oh hey, it's Wally!</h1>
@@ -76,7 +76,7 @@ when one group member is opened.
 
 You can make triggers hide themselves (via a jQuery `.hide()` call) when clicked:
 
-```
+```html
 <span data-hide-self data-showhide-trigger='wheres-wally'>My trigger</span>
 
 ```
@@ -86,7 +86,7 @@ You can make triggers hide themselves (via a jQuery `.hide()` call) when clicked
 
 If the browser supports CSS3 animations, you can apply an in and out animation by passing a class that has a CSS animation registered against it.
 
-```
+```html
 <div class='showhide-hidden' data-showhide-container='wheres-batman' data-showhide-in='animFadeIn' data-showhide-out='animFadeOut'>
     <h1>Oh hey, it's Batman™!</h1>
 </div>
@@ -133,7 +133,7 @@ In your stylesheet:
 ShowHide.js emits events on the document via jQuery eventing:
 
 
-```
+```js
 $document.on("showHide:show", function(showHideObject) {
     // do something awesome.
 });
