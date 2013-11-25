@@ -5,7 +5,7 @@ Put simply, show a `data-showhide-container` when a `data-showhide-trigger` is c
 ```html
 <span data-showhide-trigger='wheres-wally'>Find wally</span>
 
-<div class='showhide--hidden' data-showhide-container='wheres-wally'>
+<div class='showhide-hidden' data-showhide-container='wheres-wally'>
     <h1>Oh hey, it's Wally!</h1>
 </div>
 
