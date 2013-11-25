@@ -5,9 +5,10 @@
   "main": "show-hide.js",
   "keywords": [
     "UI",
-    "interaction",
-    "showhide",
-    "toggle"
+    "Interaction patterns",
+    "Show/Hide",
+    "Toggle",
+    "CSS Animations"
   ],
   "authors": [
     "Springload"
@@ -20,5 +21,9 @@
     "bower_components",
     "test",
     "tests"
-  ]
+  ],
+  "dependencies": {
+    "browser.js": "*",
+    "jquery": "~1.9.1"
+  }
 }

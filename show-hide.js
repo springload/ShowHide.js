@@ -10,8 +10,8 @@
             var self = this;
             this.$container = $container;
             this.$triggers = $triggers;
-            this.activeClass = "opened";
-            this.triggerClass = "active";
+            this.activeClass = "showhide-open";
+            this.triggerClass = "showhide-active";
             this.animInClass = false;
             this.animOutClass = false;
             this.autoHeight = false;
@@ -65,10 +65,6 @@
                     });
                 }
 
-                if (self.activateModal) {
-                    var $modal = $('.modal_overlay');
-                    $modal.addClass('active');
-                }
 
                 if (self.animInClass && self.animEvent) {
                         self.$container.one(this.animEvent, function() {
@@ -100,7 +96,7 @@
                 }
 
                 // Fire an event that other things can bind to
-                $doc.trigger("showHideOpen", [self]);
+                $doc.trigger("showHide:open", [self]);
 
                 this.isOpen = true;
                 return shouldOpen;
@@ -130,10 +126,6 @@
                     self.$container.removeClass(self.activeClass);
                 }
 
-                if (self.activateModal) {
-                    var $modal = $('.modal_overlay');
-                    $modal.removeClass('active');
-                }
 
                 this.$triggers.each(function() {
                     var $this = $(this);
@@ -144,7 +136,7 @@
                 });
 
                 // Fire an event that other things can bind to
-                $document.trigger("showHideClose", [self]);
+                $document.trigger("showHide:close", [self]);
 
                 this.$container.off("click", function(e) {
                     e.stopPropagation();
@@ -192,7 +184,7 @@
                     var animOutClass = $showHideContainer.data("showhide-out");
                     var triggerClass = $showHideContainer.data("showhide-triggerclass");
                     var autoHeight = typeof($showHideContainer.data("showhide-autoheight")) !== "undefined";
-                    var activateModal = typeof($showHideContainer.data("showhide-activate-modal")) !== "undefined";
+
                     options = {
                         alias: name,
                         group: group,
@@ -200,8 +192,7 @@
                         triggerClass: triggerClass,
                         animInClass: animInClass,
                         animOutClass: animOutClass,
-                        autoHeight: autoHeight,
-                        activateModal: activateModal
+                        autoHeight: autoHeight
                     };
 
                     self.showHides[name] = new ShowHide($showHideContainer, $showHideTriggers, options);
@@ -218,5 +209,9 @@
             }
         };
     })();
+
+    $(document).ready(function() {
+        ShowHide.init();
+    });
 
 })(window, document);
