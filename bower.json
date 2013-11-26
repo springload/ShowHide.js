@@ -1,6 +1,6 @@
 {
-  "name": "springload-showhide",
-  "version": "0.0.1",
+  "name": "springload-showhide.js",
+  "version": "0.0.2",
   "description": "Show and hide content via data-attribute hooks",
   "main": "show-hide.js",
   "keywords": [

@@ -46,12 +46,12 @@ height via CSS transitions:
 </div>
 ```
 
-### Dismissable
+### Dismissible
 The component will hide/toggle if the user clicks anywhere outside the component.
 
 
 ```html
-<div class='showhide-hidden' data-showhide-container='wheres-wally' data-showhide-dismissable>
+<div class='showhide-hidden' data-showhide-container='wheres-wally' data-showhide-dismissible>
     <h1>Oh hey, it's Wally!</h1>
 </div>
 ```
@@ -134,11 +134,11 @@ ShowHide.js emits events on the document via jQuery eventing:
 
 
 ```js
-$document.on("showHide:show", function(showHideObject) {
+$(document).on("showHide:open", function(showHideObject) {
     // do something awesome.
 });
 
-$document.on("showHide:close", function(showHideObject) {
+$(document).on("showHide:close", function(showHideObject) {
     // do something less awesome.
 });
 

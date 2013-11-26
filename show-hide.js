@@ -65,9 +65,8 @@
                     });
                 }
 
-
                 if (self.animInClass && self.animEvent) {
-                        self.$container.one(this.animEvent, function() {
+                    self.$container.one(this.animEvent, function() {
                         self.$container.removeClass(self.animInClass);
                     });
                     self.$container.addClass(self.animInClass);
@@ -76,7 +75,7 @@
                 this.$triggers.each(function() {
                    var $this = $(this);
                     $this.addClass(self.triggerClass);
-                    if ($this.attr("data-hide-self")) {
+                    if (typeof $this.attr("data-hide-self") !== "undefined") {
                         $this.hide();
                     }
                 });
@@ -130,7 +129,7 @@
                 this.$triggers.each(function() {
                     var $this = $(this);
                     $this.removeClass(self.triggerClass);
-                    if ($this.attr("data-hide-self")) {
+                    if (typeof $this.attr("data-hide-self") !== "undefined") {
                         $this.show();
                     }
                 });
@@ -211,7 +210,7 @@
     })();
 
     $(document).ready(function() {
-        ShowHide.init();
+        ShowHideController.init();
     });
 
 })(window, document);
